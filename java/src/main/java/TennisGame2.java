@@ -1,10 +1,10 @@
 
 public class TennisGame2 implements TennisGame
 {
-    public int P1point = 0;
+    public int P1point = 0; //wrong naming convention.starts with capital letter.make them private
     public int P2point = 0;
     
-    public String P1res = "";
+    public String P1res = ""; //what is res??
     public String P2res = "";
     private String player1Name;
     private String player2Name;
@@ -14,9 +14,9 @@ public class TennisGame2 implements TennisGame
         this.player2Name = player2Name;
     }
 
-    public String getScore(){
+    public String getScore(){  //too complex in naming scores.just does a bunch of checks that could be simplified
         String score = "";
-        if (P1point == P2point && P1point < 4)
+        if (P1point == P2point && P1point < 4)  //would use equals method. it is very chaotic in defining value intervals
         {
             if (P1point==0)
                 score = "Love";
@@ -44,7 +44,8 @@ public class TennisGame2 implements TennisGame
         if (P2point > 0 && P1point==0)
         {
             if (P2point==1)
-                P2res = "Fifteen";
+                P2res = "Fifteen";  //a lot of duplicated code.comparison should be done at the end,
+                                    // based on final scores and extract these strings as constants
             if (P2point==2)
                 P2res = "Thirty";
             if (P2point==3)
@@ -79,7 +80,7 @@ public class TennisGame2 implements TennisGame
             score = P1res + "-" + P2res;
         }
         
-        if (P1point > P2point && P2point >= 3)
+        if (P1point > P2point && P2point >= 3)  //these chucks could be done together in if-else
         {
             score = "Advantage player1";
         }
@@ -89,7 +90,7 @@ public class TennisGame2 implements TennisGame
             score = "Advantage player2";
         }
         
-        if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
+        if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2) //these chucks could be done together in if-else
         {
             score = "Win for player1";
         }
@@ -100,7 +101,7 @@ public class TennisGame2 implements TennisGame
         return score;
     }
     
-    public void SetP1Score(int number){
+    public void SetP1Score(int number){ //wrong naming convention.starts with capital letter
         
         for (int i = 0; i < number; i++)
         {
@@ -109,7 +110,7 @@ public class TennisGame2 implements TennisGame
             
     }
     
-    public void SetP2Score(int number){
+    public void SetP2Score(int number){ //wrong naming convention.starts with capital letter
         
         for (int i = 0; i < number; i++)
         {
@@ -120,7 +121,7 @@ public class TennisGame2 implements TennisGame
     
     public void P1Score(){
         P1point++;
-    }
+    } //wrong naming convention.starts with capital letter.make them private
     
     public void P2Score(){
         P2point++;
